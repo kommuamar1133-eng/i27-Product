@@ -1,11 +1,25 @@
-FROM openjdk:18.0.2.1-jdk
-ARG JAR_SOURCE
-ENV JAR_SOURCE ${JAR_SOURCE}
-ARG JAR_DEST
-ENV JAR_DEST ${JAR_DEST}
+# Official OPENJDK18 image as the base image
+FROM openjdk:18
+
+# Create the directory /opt/i27/ , in which we store our application.
 RUN mkdir -p /opt/i27/
+
+# Setting the working directory to /opt/i27
 WORKDIR /opt/i27/
+
+# Define a build-time variable called JAR_SOURCE to specify the location of the JAR file
+ARG JAR_SOURCE
+
+# Copy the JAR File 
 COPY ["${JAR_SOURCE}", "/opt/i27/i27cart-product.jar"]
+
+# Grant RWX permissions on this directory 
 RUN chmod 777 /opt/i27/
-EXPOSE 8232
+
+# Expose port 8761 to allow external access to application.
+EXPOSE 8761  
+
+# Specify the command to run the Spring Based application using the JAVA JAR File
 CMD ["java", "-jar", "/opt/i27/i27cart-product.jar"]
+
+# CMD ["java", "-jar", "/*.jar"]
