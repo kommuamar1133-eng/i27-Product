@@ -34,9 +34,10 @@ spring:
   datasource:
     #    password: **** JAVA_OPTS=-Dspring.profile="test"
     #    url
-    password: Gcp@2023 # 100% ,ciphers ===>  devs will encrypt this usig spring
-    url: jdbc:mysql://146.148.100.51:3306/learnerCrownClothing?useSSL=FALSE
-    username: root
+    password: Nani@1133 # 100% ,ciphers ===>  devs will encrypt this usig spring
+    url: jdbc:mysql://34.133.151.169:3306/learnerCrownClothing?useSSL=FALSE
+                     # My SQL DB Ip
+    username: db_user
   jpa:
     hibernate:
       ddl-auto: update
@@ -48,5 +49,6 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://34.170.237.196:5761/eureka/
+      defaultZone: http://34.26.104.223:5761/eureka/
+                        # docker server Ip
 ---
