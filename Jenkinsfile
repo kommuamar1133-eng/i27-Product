@@ -108,7 +108,7 @@ pipeline {
                 script {
                     // envDeploy, hostPort, contPort
                     imageValidation().call()
-                    dockerDeploy('dev', '5761', '8761').call()
+                    dockerDeploy('dev', '5132', '8132').call()
                 }
             }
         }
@@ -124,7 +124,7 @@ pipeline {
                 script {
                     // envDeploy, hostPort, contPort
                     imageValidation().call()
-                    dockerDeploy('tst', '6761', '8761').call()
+                    dockerDeploy('tst', '6132', '8132').call()
                 }       
             }
         }
@@ -146,7 +146,7 @@ pipeline {
                 script {
                     // envDeploy, hostPort, contPort
                     imageValidation().call()
-                    dockerDeploy('stg', '7761', '8761').call()
+                    dockerDeploy('stg', '7132', '8132').call()
                 }         
             }
         }
@@ -171,7 +171,7 @@ pipeline {
                 script {
                     // envDeploy, hostPort, contPort
                     imageValidation().call()
-                    dockerDeploy('prd', '8761', '8761').call()
+                    dockerDeploy('prd', '8132', '8132').call()
                 }       
             }
         }       
